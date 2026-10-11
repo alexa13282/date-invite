@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Для тебя ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Подключаем конфетти для финального экрана -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Фоновые плавающие сердечки -->
+  <div class="floating-hearts-container" id="heartsBg"></div>
+
+  <!-- ЭКРАН 1: Блокировка / Ввод даты -->
+  <section class="screen lock-screen active" id="lockScreen">
+    <div class="lock-card">
+      <div class="heart-lock-wrapper" id="heartLock">
+        <div class="big-heart" id="bigHeart">❤️</div>
+        <div class="lock-icon" id="lockIcon">🔒</div>
+      </div>
+
+      <h1 class="lock-title">Вспомни этот день</h1>
+      <p class="lock-subtitle">Введи дату, когда всё началось ✨</p>
+
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          id="dateInput" 
+          placeholder="ДД.ММ.ГГГГ" 
+          inputmode="numeric" 
+          maxlength="10" 
+          autocomplete="off"
+        >
+      </div>
+
+      <p class="error-msg" id="errorMsg">Подумай ещё, это очень важная дата... 💕</p>
+
+      <button class="btn unlock-btn" id="unlockBtn">Разблокировать</button>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 2: Интерактивная история (Слайдер / Воспоминания) -->
+  <section class="screen story-screen" id="storyScreen">
+    <div class="progress-bar-container" id="progressBar"></div>
+
+    <div class="story-content" id="storyContent">
+      <!-- Контент слайда генерируется через JS -->
+    </div>
+
+    <!-- Кнопки навигации -->
+    <div class="nav-controls">
+      <button class="nav-btn prev-btn" id="prevSlideBtn">← Назад</button>
+      <button class="nav-btn next-btn" id="nextSlideBtn">Дальше →</button>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 3: Само приглашение -->
+  <section class="screen invite-screen" id="inviteScreen">
+    <div class="invite-card">
+      <div class="invite-badge">Особый вечер</div>
+      <h2 class="invite-title" id="inviteTitle">Пойдём на свидание?</h2>
+      <p class="invite-desc" id="inviteDesc">
+        Хочу провести этот вечер только вдвоем, вспомнить всё теплое и создать еще одну главу нашей истории.
+      </p>
+
+      <div class="details-box">
+        <div class="detail-item">
+          <span class="icon">📅</span>
+          <div>
+            <strong>Когда:</strong>
+            <p id="inviteDate">Пятница, 19:00</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="icon">📍</span>
+          <div>
+            <strong>Где:</strong>
+            <p id="invitePlace">Секретное место (я заеду за тобой)</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="icon">👗</span>
+          <div>
+            <strong>Дресс-код:</strong>
+            <p id="inviteDressCode">Твоя самая искренняя улыбка</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="choice-buttons" id="choiceButtons">
+        <button class="btn confirm-btn" id="btnYes">Да! ❤️</button>
+        <button class="btn confirm-btn" id="btnOfCourse">Определенно да! 🥰</button>
+      </div>
+
+      <div class="accepted-message" id="acceptedMessage">
+        <h3>Ура! Я уже считаю минуты до встречи! 🥂✨</h3>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
